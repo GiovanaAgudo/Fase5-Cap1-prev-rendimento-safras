@@ -169,10 +169,14 @@ A região **US East (N. Virginia)** apresentou o menor custo mensal estimado. En
 
 Essa decisão prioriza desempenho e conformidade regulatória, mantendo ao mesmo tempo um custo operacional relativamente baixo para a execução da solução proposta.
 
+## 🎥 Demonstração em vídeo - Entrega 2
+O vídeo demonstra como utilizamos a AWS Pricing Calculator para estimar os custos de infraestrutura em nuvem e comparar duas regiões da AWS, identificando a melhor opção para hospedar nossa solução de Machine Learning.
 
+*https://www.youtube.com/watch?v=HSdiVCVqjYA&feature=youtu.be*
+
+---
 
 ## Autoria
-
 **Giovana Agudo**  
 RM: 566773  
 FIAP — Inteligência Artificial
