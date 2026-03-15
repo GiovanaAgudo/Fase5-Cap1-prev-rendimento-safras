@@ -84,6 +84,93 @@ O vídeo apresenta uma visão geral do problema, da base de dados, da abordagem 
 
 ---
 
+# Infraestrutura em Nuvem – Estimativa de Custos AWS
+
+Para viabilizar a execução do modelo de Machine Learning desenvolvido neste projeto, foi realizada uma estimativa de custos utilizando a **AWS Pricing Calculator**. O objetivo foi simular a hospedagem de uma API responsável por receber dados provenientes de sensores agrícolas e executar previsões de rendimento de safra utilizando o modelo treinado.
+
+Essa infraestrutura permitiria que sensores instalados na fazenda enviassem dados continuamente para a nuvem, onde o modelo de Machine Learning realizaria inferências em tempo real.
+
+---
+
+# Arquitetura proposta
+
+A arquitetura proposta consiste em uma instância **Amazon EC2** executando um ambiente Linux simples responsável por:
+
+- Receber dados coletados por sensores agrícolas
+- Armazenar dados temporários
+- Executar o modelo de Machine Learning treinado
+- Disponibilizar uma API para previsões de produtividade
+
+Essa instância funcionaria como o ponto central de processamento dos dados coletados no campo.
+
+---
+
+# Configuração da máquina
+
+Para a estimativa, foi utilizada uma configuração simples de máquina virtual com os seguintes recursos:
+
+| Recurso | Configuração |
+|------|------|
+| Serviço | Amazon EC2 |
+| Sistema operacional | Linux |
+| Instância | t3.micro |
+| CPUs | 2 vCPU |
+| Memória | 1 GiB |
+| Rede | até 5 Gigabit |
+| Armazenamento | 50 GB (EBS gp3) |
+| Modelo de cobrança | On-Demand |
+
+Essa configuração é suficiente para hospedar uma API leve de Machine Learning e processar requisições de sensores agrícolas.
+
+---
+
+# Comparação de custos por região
+
+Foi realizada uma comparação entre duas regiões da AWS:
+
+- **US East (N. Virginia)**
+- **South America (São Paulo)**
+
+| Região AWS | Instância | CPUs | Memória | Armazenamento | Custo mensal |
+|------|------|------|------|------|------|
+| US East (N. Virginia) | t3.micro | 2 vCPU | 1 GiB | 50 GB | $11.59 |
+| South America (São Paulo) | t3.micro | 2 vCPU | 1 GiB | 50 GB | $13.15 |
+
+
+[saopaulo-BR.png](./img/saopaulo-BR.png)
+[virginia-EUA.png](./img/virginia-EUA.png)
+Embora a região norte-americana apresente um custo ligeiramente menor, a diferença é relativamente pequena.
+
+---
+
+# Justificativa da escolha da região
+
+Apesar do menor custo apresentado pela região **US East (N. Virginia)**, a região **South America (São Paulo)** foi considerada a opção mais adequada para o cenário proposto.
+
+Essa escolha se baseia nos seguintes fatores:
+
+**Menor latência**
+
+Os sensores agrícolas instalados na fazenda precisam enviar dados com frequência para a API. Utilizar uma região geograficamente mais próxima reduz o tempo de comunicação entre os dispositivos e o servidor.
+
+**Conformidade com legislações de dados**
+
+Em muitos cenários, o armazenamento de dados fora do país pode apresentar restrições legais relacionadas à **Lei Geral de Proteção de Dados (LGPD)**. Hospedar os dados dentro do território brasileiro reduz riscos regulatórios.
+
+**Maior confiabilidade para sistemas em tempo real**
+
+Aplicações que dependem de coleta contínua de dados, como monitoramento agrícola, se beneficiam de infraestrutura mais próxima da origem dos dados.
+
+---
+
+# Conclusão
+
+A região **US East (N. Virginia)** apresentou o menor custo mensal estimado. Entretanto, considerando requisitos operacionais, latência e possíveis restrições legais relacionadas ao armazenamento de dados, a região **South America (São Paulo)** foi considerada a escolha mais adequada para a implantação da infraestrutura do sistema.
+
+Essa decisão prioriza desempenho e conformidade regulatória, mantendo ao mesmo tempo um custo operacional relativamente baixo para a execução da solução proposta.
+
+
+
 ## Autoria
 
 **Giovana Agudo**  
