@@ -138,7 +138,9 @@ Foi realizada uma comparação entre duas regiões da AWS:
 
 
 [saopaulo-BR.png](./img/saopaulo-BR.png)
+ 
 [virginia-EUA.png](./img/virginia-EUA.png)
+ 
 Embora a região norte-americana apresente um custo ligeiramente menor, a diferença é relativamente pequena.
 
 ---
